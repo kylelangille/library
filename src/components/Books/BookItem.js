@@ -19,6 +19,13 @@ const BookItem = (props) => {
       >
         {props.hasRead ? "read it!" : "not read yet"}
       </div>
+      <button
+        onClick={props.onDeleteBook}
+        type="button"
+        className="delete-book--btn"
+      >
+        X
+      </button>
     </div>
   );
 };

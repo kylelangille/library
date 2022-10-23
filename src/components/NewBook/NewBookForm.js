@@ -38,7 +38,6 @@ const NewBookForm = (props) => {
     setEnteredTitle("");
     setEnteredAuthor("");
     setEnteredHasRead("");
-    console.log(bookData);
   };
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/UI/Header";
 import Footer from "./components/UI/Footer";
 import NewBook from "./components/NewBook/NewBook";
@@ -16,9 +16,27 @@ const DUMMY_BOOKS = [
 function App() {
   const [books, setBooks] = useState(DUMMY_BOOKS);
 
+  useEffect(() => {
+    localStorage.setItem("bookData", JSON.stringify(books));
+  }, [books]);
+
+  useEffect(() => {
+    const books = JSON.parse(localStorage.getItem("bookData"));
+    if (books) {
+      setBooks(books);
+    }
+  }, [books]);
+
   const addBookHandler = (book) => {
     setBooks((prevBooks) => {
       return [book, ...prevBooks];
+    });
+  };
+
+  const deleteBookHandler = (bookId) => {
+    setBooks((prevBooks) => {
+      const updatedBooks = prevBooks.filter((book) => book.id !== bookId);
+      return updatedBooks;
     });
   };
 
@@ -26,7 +44,7 @@ function App() {
     <div>
       <Header />
       <NewBook onAddBook={addBookHandler} />
-      <Books items={books} />
+      <Books items={books} onDeleteBook={deleteBookHandler} />
       <Footer />
     </div>
   );
