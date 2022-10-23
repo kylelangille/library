@@ -1,0 +1,38 @@
+/************/
+/*  HEADER  */
+/************/
+.header {
+  height: 7rem;
+  background-color: #464444;
+  width: 100vw;
+  border-bottom: 1px solid #000;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+}
+
+.main-heading {
+  color: #000;
+  font-size: 3rem;
+  font-family: "Inter";
+}
+
+/************/
+/*  HEADER  */
+/************/
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 3rem;
+  background: #464444;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-text {
+  color: #000;
+  font-family: "Inter";
+  font-weight: 500;
+}
