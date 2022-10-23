@@ -10,6 +10,7 @@
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
   display: flex;
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .book-img {
@@ -22,6 +23,42 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.book-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.book-author {
+  font-size: 1.2rem;
+}
+
+.has-read--icon-true,
+.has-read--icon-false {
+  width: 7rem;
+  height: 3rem;
+  border-radius: 9px;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3rem;
+  position: absolute;
+  right: 0;
+  top: 20%;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.has-read--icon-true {
+  background-color: #27ae60;
+}
+
+.has-read--icon-false {
+  background-color: #c0392b;
 }
 
 .books-list--wrapper {

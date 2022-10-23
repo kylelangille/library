@@ -8,7 +8,7 @@ const NewBook = (props) => {
   const saveBookDataHandler = (enteredBookData) => {
     const bookData = {
       ...enteredBookData,
-      id: Math.random().toString(),
+      id: "b" + Math.random().toString(),
     };
     props.onAddBook(bookData);
     setIsEditing(false);

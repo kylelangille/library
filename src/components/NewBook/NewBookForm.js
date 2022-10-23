@@ -21,6 +21,13 @@ const NewBookForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
+    if (
+      enteredAuthor.trim().length === 0 ||
+      enteredAuthor.trim().length === 0
+    ) {
+      return;
+    }
+
     const bookData = {
       title: enteredTitle,
       author: enteredAuthor,
