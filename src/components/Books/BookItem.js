@@ -4,7 +4,7 @@ import "./Books.css";
 
 const BookItem = (props) => {
   const deleteHandler = () => {
-    props.onDeleteBook(props.id);
+    props.onDelete(props.id);
   };
 
   return (
@@ -14,7 +14,6 @@ const BookItem = (props) => {
         <p className="book-title">{props.title}</p>
         <p className="book-author">{props.author}</p>
       </div>
-
       <div
         className={
           props.hasRead

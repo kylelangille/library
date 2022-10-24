@@ -12,10 +12,11 @@ const BookList = (props) => {
       {props.items.map((book) => (
         <BookItem
           key={book.id}
+          id={book.id}
           title={book.title}
           author={book.author}
           hasRead={book.hasRead}
-          onDeleteBook={props.deleteBookHandler}
+          onDelete={props.onDelete}
         />
       ))}
     </ul>

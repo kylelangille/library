@@ -5,7 +5,7 @@ import "./Books.css";
 const Books = (props) => {
   return (
     <div className="books-list--wrapper">
-      <BookList items={props.items} onDeleteBook={props.deleteBookHandler} />
+      <BookList items={props.items} onDelete={props.onDeleteBook} />
     </div>
   );
 };
