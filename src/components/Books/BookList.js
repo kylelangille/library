@@ -8,16 +8,17 @@ const BookList = (props) => {
   }
 
   return (
-    <div>
+    <ul>
       {props.items.map((book) => (
         <BookItem
           key={book.id}
           title={book.title}
           author={book.author}
           hasRead={book.hasRead}
+          onDeleteBook={props.deleteBookHandler}
         />
       ))}
-    </div>
+    </ul>
   );
 };
 

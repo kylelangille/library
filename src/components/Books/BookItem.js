@@ -3,8 +3,12 @@ import BookCover from "./BookCover";
 import "./Books.css";
 
 const BookItem = (props) => {
+  const deleteHandler = () => {
+    props.onDeleteBook(props.id);
+  };
+
   return (
-    <div className="book">
+    <li className="book">
       <BookCover />
       <div className="book-info--wrapper">
         <p className="book-title">{props.title}</p>
@@ -21,13 +25,13 @@ const BookItem = (props) => {
         {props.hasRead ? "read it!" : "not read yet"}
       </div>
       <button
-        onClick={props.onDeleteBook}
+        onClick={deleteHandler}
         type="button"
         className="delete-book--btn"
       >
         X
       </button>
-    </div>
+    </li>
   );
 };
 export default BookItem;
