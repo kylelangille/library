@@ -2,6 +2,34 @@
   font-family: "Inter";
 }
 
+/*******************/
+/*  OPENING FORM   */
+/*******************/
+.new-book {
+  display: flex;
+  justify-content: center;
+}
+
+.open-form--btn {
+  margin-top: 1rem;
+  width: 8rem;
+  height: 3.3rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 9px;
+  border: 1px solid #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.open-form--btn:hover {
+  color: #ececec;
+  background-color: #0984e3;
+}
+
+/*******************/
+/*  FORM ELEMENTS  */
+/*******************/
 .add-book--form {
   display: flex;
   flex-direction: column;
@@ -62,26 +90,4 @@
 .add-book--cancel:hover {
   background-color: #d63031;
   color: #ececec;
-}
-
-.new-book {
-  display: flex;
-  justify-content: center;
-}
-
-.open-form--btn {
-  margin-top: 1rem;
-  width: 8rem;
-  height: 3.3rem;
-  font-weight: 600;
-  font-size: 1rem;
-  border-radius: 9px;
-  border: 1px solid #000;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.open-form--btn:hover {
-  color: #ececec;
-  background-color: #0984e3;
 }

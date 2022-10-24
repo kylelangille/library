@@ -29,11 +29,21 @@ function App() {
     });
   };
 
+  let content = (
+    <h2 style={{ textAlign: "center", color: "#ccc", marginTop: "1rem" }}>
+      No books found. Maybe add one?
+    </h2>
+  );
+
+  if (books.length > 0) {
+    content = <Books items={books} onDeleteBook={deleteBookHandler} />;
+  }
+
   return (
     <div>
       <Header />
       <NewBook onAddBook={addBookHandler} />
-      <Books items={books} onDeleteBook={deleteBookHandler} />
+      {content}
       <Footer />
     </div>
   );
