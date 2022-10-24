@@ -1,10 +1,11 @@
 import React from "react";
+import BookCover from "./BookCover";
 import "./Books.css";
 
 const BookItem = (props) => {
   return (
     <div className="book">
-      <img className="book-img" src="default-book.png" alt="book" />
+      <BookCover />
       <div className="book-info--wrapper">
         <p className="book-title">{props.title}</p>
         <p className="book-author">{props.author}</p>
