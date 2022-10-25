@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import "./NewBook.css";
 
 const NewBookForm = (props) => {
@@ -40,6 +41,47 @@ const NewBookForm = (props) => {
     setEnteredHasRead("");
   };
 
+  const InputWrapper = styled.div`
+    display: flex;
+    align-items: center;
+  `;
+
+  const ControlsContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+  `;
+
+  const AddBookButton = styled.button`
+    width: 8rem;
+    height: 3rem;
+    margin: 1rem auto 0.5rem auto;
+    font-weight: 700;
+    border-radius: 9px;
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #ececec;
+      background-color: #0984e3;
+    }
+  `;
+
+  const CancelButton = styled.button`
+    height: 3rem;
+    margin: 1rem 1rem 0 0;
+    width: 4rem;
+    border-radius: 9px;
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #d63031;
+      color: #ececec;
+    }
+  `;
+
   return (
     <form onSubmit={submitHandler} className="add-book--form">
       <label htmlFor="title">Title</label>
@@ -49,7 +91,6 @@ const NewBookForm = (props) => {
         value={enteredTitle}
         onChange={titleChangeHandler}
       />
-
       <label htmlFor="author">Author</label>
       <input
         id="author"
@@ -57,8 +98,7 @@ const NewBookForm = (props) => {
         value={enteredAuthor}
         onChange={authorChangeHandler}
       />
-
-      <div className="input-wrapper">
+      <InputWrapper>
         <label htmlFor="hasRead">Have you read it?</label>
         <input
           id="hasRead"
@@ -67,19 +107,11 @@ const NewBookForm = (props) => {
           value={enteredHasRead}
           onChange={hasReadChangeHandler}
         />
-      </div>
-      <div className="add-book--controls">
-        <button type="submit" className="add-book--btn">
-          Add Book
-        </button>
-        <button
-          onClick={props.onCancel}
-          type="button"
-          className="add-book--cancel"
-        >
-          Cancel
-        </button>
-      </div>
+      </InputWrapper>
+      <ControlsContainer>
+        <AddBookButton>Add Book</AddBookButton>
+        <CancelButton onClick={props.onCancel}>Cancel</CancelButton>
+      </ControlsContainer>
     </form>
   );
 };
