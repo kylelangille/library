@@ -1,12 +1,7 @@
 import React from "react";
 import BookItem from "./BookItem";
-import "./Books.css";
 
 const BookList = (props) => {
-  if (props.items.length === 0) {
-    return <h2>No books found.</h2>;
-  }
-
   return (
     <ul>
       {props.items.map((book) => (

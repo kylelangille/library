@@ -12,23 +12,6 @@
 /*  BOOK ELEMENTS  */
 /*******************/
 
-.book {
-  width: 37rem;
-  height: 5rem;
-  background-color: #414141;
-  border-radius: 9px;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-  display: flex;
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.book-img {
-  height: 4.4rem;
-  width: 4.4rem;
-  margin: 0.25rem 1rem 0 0;
-}
-
 .book-info--wrapper {
   display: flex;
   flex-direction: column;
