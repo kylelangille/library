@@ -2,6 +2,16 @@
   font-family: "Inter";
 }
 
+.books-list--wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/*******************/
+/*  BOOK ELEMENTS  */
+/*******************/
+
 .book {
   width: 37rem;
   height: 5rem;
@@ -36,6 +46,10 @@
   color: #ccc;
 }
 
+/*******************/
+/*  HAS READ ICON  */
+/*******************/
+
 .has-read--icon-true,
 .has-read--icon-false {
   width: 7rem;
@@ -62,6 +76,10 @@
   background: linear-gradient(to bottom right, #c0392b, #cd6155);
 }
 
+/*******************/
+/*      BUTTONS    */
+/*******************/
+
 .delete-book--btn {
   position: absolute;
   right: 1%;
@@ -78,10 +96,4 @@
   background-color: #d63031;
   color: #ececec;
   transform: rotate(180deg);
-}
-
-.books-list--wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
 }
