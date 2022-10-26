@@ -19,13 +19,48 @@ const BookItem = (props) => {
     position: relative;
   `;
 
+  const DeleteButton = styled.button`
+    position: absolute;
+    right: 1%;
+    top: 35%;
+    cursor: pointer;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 1px solid #000;
+    border-radius: 9px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #d63031;
+      color: #ececec;
+      transform: rotate(180deg);
+    }
+  `;
+
+  const InfoWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  `;
+
+  const BookTitle = styled.p`
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #b3b3b3;
+  `;
+
+  const BookAuthor = styled.p`
+    font-size: 1.2rem;
+    color: #ccc;
+  `;
+
   return (
     <Book>
       <BookCover />
-      <div className="book-info--wrapper">
-        <p className="book-title">{props.title}</p>
-        <p className="book-author">{props.author}</p>
-      </div>
+      <InfoWrapper>
+        <BookTitle>{props.title}</BookTitle>
+        <BookAuthor>{props.author}</BookAuthor>
+      </InfoWrapper>
       <div
         className={
           props.hasRead
@@ -35,13 +70,9 @@ const BookItem = (props) => {
       >
         {props.hasRead ? "read it!" : "not read yet"}
       </div>
-      <button
-        onClick={deleteHandler}
-        type="button"
-        className="delete-book--btn"
-      >
+      <DeleteButton onClick={deleteHandler} type="button">
         X
-      </button>
+      </DeleteButton>
     </Book>
   );
 };

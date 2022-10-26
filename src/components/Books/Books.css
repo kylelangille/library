@@ -2,33 +2,6 @@
   font-family: "Inter";
 }
 
-.books-list--wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-/*******************/
-/*  BOOK ELEMENTS  */
-/*******************/
-
-.book-info--wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.book-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #b3b3b3;
-}
-
-.book-author {
-  font-size: 1.2rem;
-  color: #ccc;
-}
-
 /*******************/
 /*  HAS READ ICON  */
 /*******************/
@@ -57,26 +30,4 @@
 
 .has-read--icon-false {
   background: linear-gradient(to bottom right, #c0392b, #cd6155);
-}
-
-/*******************/
-/*      BUTTONS    */
-/*******************/
-
-.delete-book--btn {
-  position: absolute;
-  right: 1%;
-  top: 35%;
-  cursor: pointer;
-  width: 1.2rem;
-  height: 1.2rem;
-  border: 1px solid #000;
-  border-radius: 9px;
-  transition: all 0.3s ease;
-}
-
-.delete-book--btn:hover {
-  background-color: #d63031;
-  color: #ececec;
-  transform: rotate(180deg);
 }

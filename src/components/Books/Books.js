@@ -1,12 +1,18 @@
 import React from "react";
 import BookList from "./BookList";
-import "./Books.css";
+import styled from "styled-components";
+
+const BookListWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+`;
 
 const Books = (props) => {
   return (
-    <div className="books-list--wrapper">
+    <BookListWrapper>
       <BookList items={props.items} onDelete={props.onDeleteBook} />
-    </div>
+    </BookListWrapper>
   );
 };
 

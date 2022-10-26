@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import NewBookForm from "./NewBookForm";
-import "./NewBook.css";
 
 const NewBook = (props) => {
   const [isEditing, setIsEditing] = useState(false);
