@@ -24,10 +24,10 @@ const BookItem = (props) => {
     right: 1%;
     top: 35%;
     cursor: pointer;
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.3rem;
+    height: 1.3rem;
     border: 1px solid #000;
-    border-radius: 9px;
+    border-radius: 50%;
     transition: all 0.3s ease;
 
     &:hover {
@@ -71,7 +71,7 @@ const BookItem = (props) => {
         {props.hasRead ? "read it!" : "not read yet"}
       </div>
       <DeleteButton onClick={deleteHandler} type="button">
-        X
+        ✖
       </DeleteButton>
     </Book>
   );
