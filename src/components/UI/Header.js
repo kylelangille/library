@@ -9,18 +9,18 @@ const Head = styled.header`
   display: flex;
   align-items: center;
   padding-left: 2rem;
-`;
 
-const MainHeading = styled.h1`
-  color: #b3b3b3;
-  font-size: 3rem;
-  font-family: "Inter";
+  & h2 {
+    color: #b3b3b3;
+    font-size: 3rem;
+    font-family: "Inter";
+  }
 `;
 
 const Header = () => {
   return (
     <Head>
-      <MainHeading>📚MyLibrary</MainHeading>
+      <h2>📚MyLibrary</h2>
     </Head>
   );
 };

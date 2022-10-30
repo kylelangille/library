@@ -10,18 +10,18 @@ const Foot = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
 
-const FooterText = styled.p`
-  color: #b3b3b3;
-  font-family: "Inter";
-  font-weight: 500;
+  & p {
+    color: #b3b3b3;
+    font-family: "Inter";
+    font-weight: 500;
+  }
 `;
 
 const Footer = () => {
   return (
     <Foot>
-      <FooterText>Made with ❤️ by Kyle</FooterText>
+      <p>Made with ❤️ by Kyle</p>
     </Foot>
   );
 };

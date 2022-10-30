@@ -17,50 +17,50 @@ const BookItem = (props) => {
     display: flex;
     margin-bottom: 1rem;
     position: relative;
-  `;
 
-  const DeleteButton = styled.button`
-    position: absolute;
-    right: 1%;
-    top: 35%;
-    cursor: pointer;
-    width: 1.3rem;
-    height: 1.3rem;
-    border: 1px solid #000;
-    border-radius: 50%;
-    transition: all 0.3s ease;
+    & div:first-of-type {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-    &:hover {
+    & div p:first-of-type {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #b3b3b3;
+    }
+
+    & div p:nth-child(2) {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    & button {
+      position: absolute;
+      right: 1%;
+      top: 35%;
+      cursor: pointer;
+      width: 1.3rem;
+      height: 1.3rem;
+      border: 1px solid #000;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    & button:hover {
       background-color: #d63031;
       color: #ececec;
       transform: rotate(180deg);
     }
   `;
 
-  const InfoWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  `;
-
-  const BookTitle = styled.p`
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #b3b3b3;
-  `;
-
-  const BookAuthor = styled.p`
-    font-size: 1.2rem;
-    color: #ccc;
-  `;
-
   return (
     <Book>
       <BookCover />
-      <InfoWrapper>
-        <BookTitle>{props.title}</BookTitle>
-        <BookAuthor>{props.author}</BookAuthor>
-      </InfoWrapper>
+      <div>
+        <p>{props.title}</p>
+        <p>{props.author}</p>
+      </div>
       <div
         className={
           props.hasRead
@@ -70,9 +70,9 @@ const BookItem = (props) => {
       >
         {props.hasRead ? "read it!" : "not read yet"}
       </div>
-      <DeleteButton onClick={deleteHandler} type="button">
+      <button onClick={deleteHandler} type="button">
         ✖
-      </DeleteButton>
+      </button>
     </Book>
   );
 };

@@ -25,20 +25,20 @@ const NewBook = (props) => {
   const NewBookButtonWrapper = styled.div`
     display: flex;
     justify-content: center;
-  `;
 
-  const OpenFormButton = styled.button`
-    margin-top: 1rem;
-    width: 8rem;
-    height: 3.3rem;
-    font-weight: 600;
-    font-size: 1rem;
-    border-radius: 9px;
-    border: 1px solid #000;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    & button {
+      margin-top: 1rem;
+      width: 8rem;
+      height: 3.3rem;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 9px;
+      border: 1px solid #000;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-    &:hover {
+    & button:hover {
       color: #ececec;
       background-color: #0984e3;
     }
@@ -47,9 +47,7 @@ const NewBook = (props) => {
   return (
     <NewBookButtonWrapper>
       {!isEditing && (
-        <OpenFormButton onClick={startEditingHandler}>
-          Add new book
-        </OpenFormButton>
+        <button onClick={startEditingHandler}>Add new book</button>
       )}
       {isEditing && (
         <NewBookForm
