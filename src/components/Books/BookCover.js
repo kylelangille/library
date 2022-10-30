@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import "./Books.css";
 
 const Cover = styled.img`
   height: 4.4rem;

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import BookCover from "./BookCover";
-import "./Books.css";
 
 const Book = styled.div`
   width: 37rem;
@@ -49,6 +48,31 @@ const Book = styled.div`
   }
 `;
 
+const HasReadIcon = styled.div`
+  width: 7rem;
+  height: 3rem;
+  border-radius: 9px;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 5%;
+  top: 20%;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+
+  &.icon-true {
+    background: linear-gradient(to bottom right, #27ae60, #52be80);
+  }
+
+  &.icon-false {
+    background: linear-gradient(to bottom right, #c0392b, #cd6155);
+  }
+`;
+
 const BookItem = (props) => {
   const deleteHandler = () => {
     props.onDelete(props.id);
@@ -61,15 +85,9 @@ const BookItem = (props) => {
         <p>{props.title}</p>
         <p>{props.author}</p>
       </div>
-      <div
-        className={
-          props.hasRead
-            ? `${"has-read--icon-true"}`
-            : `${"has-read--icon-false"}`
-        }
-      >
+      <HasReadIcon className={props.hasRead ? "icon-true" : "icon-false"}>
         {props.hasRead ? "read it!" : "not read yet"}
-      </div>
+      </HasReadIcon>
       <button onClick={deleteHandler} type="button">
         ✖
       </button>

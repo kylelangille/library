@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import ErrorModal from "../UI/ErrorModal";
-import "./NewBook.css";
 
 const InputWrapper = styled.div`
   display: flex;
@@ -41,6 +40,27 @@ const CancelButton = styled.button`
   &:hover {
     background-color: #d63031;
     color: #ececec;
+  }
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  border: 1px solid #ececec;
+  border-radius: 9px;
+  margin: 1rem auto 0 auto;
+
+  & label {
+    color: #ececec;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+  }
+
+  & input {
+    margin: 0 1rem 0 1rem;
+    height: 2rem;
+    outline: none;
   }
 `;
 
@@ -101,7 +121,7 @@ const NewBookForm = (props) => {
           onConfirm={errorHandler}
         />
       )}
-      <form onSubmit={submitHandler} className="add-book--form">
+      <Form onSubmit={submitHandler}>
         <label htmlFor="title">Title</label>
         <input
           id="title"
@@ -130,7 +150,7 @@ const NewBookForm = (props) => {
           <AddBookButton>Add Book</AddBookButton>
           <CancelButton onClick={props.onCancel}>Cancel</CancelButton>
         </ControlsContainer>
-      </form>
+      </Form>
     </div>
   );
 };
