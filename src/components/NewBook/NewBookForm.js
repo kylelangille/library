@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import ErrorModal from "../UI/ErrorModal";
 import "./NewBook.css";
 
 const InputWrapper = styled.div`
@@ -47,6 +48,7 @@ const NewBookForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAuthor, setEnteredAuthor] = useState("");
   const [enteredHasRead, setEnteredHasRead] = useState(false);
+  const [error, setError] = useState();
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
@@ -67,6 +69,10 @@ const NewBookForm = (props) => {
       enteredAuthor.trim().length === 0 ||
       enteredAuthor.trim().length === 0
     ) {
+      setError({
+        title: "Invalid input",
+        message: "Please enter a valid title and author",
+      });
       return;
     }
 
@@ -82,37 +88,50 @@ const NewBookForm = (props) => {
     setEnteredHasRead("");
   };
 
+  const errorHandler = () => {
+    setError(null);
+  };
+
   return (
-    <form onSubmit={submitHandler} className="add-book--form">
-      <label htmlFor="title">Title</label>
-      <input
-        id="title"
-        type="text"
-        value={enteredTitle}
-        onChange={titleChangeHandler}
-      />
-      <label htmlFor="author">Author</label>
-      <input
-        id="author"
-        type="text"
-        value={enteredAuthor}
-        onChange={authorChangeHandler}
-      />
-      <InputWrapper>
-        <label htmlFor="hasRead">Have you read it?</label>
-        <input
-          id="hasRead"
-          name="hasRead"
-          type="checkbox"
-          value={enteredHasRead}
-          onChange={hasReadChangeHandler}
+    <div>
+      {error && (
+        <ErrorModal
+          title={error.title}
+          message={error.message}
+          onConfirm={errorHandler}
         />
-      </InputWrapper>
-      <ControlsContainer>
-        <AddBookButton>Add Book</AddBookButton>
-        <CancelButton onClick={props.onCancel}>Cancel</CancelButton>
-      </ControlsContainer>
-    </form>
+      )}
+      <form onSubmit={submitHandler} className="add-book--form">
+        <label htmlFor="title">Title</label>
+        <input
+          id="title"
+          type="text"
+          value={enteredTitle}
+          onChange={titleChangeHandler}
+        />
+        <label htmlFor="author">Author</label>
+        <input
+          id="author"
+          type="text"
+          value={enteredAuthor}
+          onChange={authorChangeHandler}
+        />
+        <InputWrapper>
+          <label htmlFor="hasRead">Have you read it?</label>
+          <input
+            id="hasRead"
+            name="hasRead"
+            type="checkbox"
+            value={enteredHasRead}
+            onChange={hasReadChangeHandler}
+          />
+        </InputWrapper>
+        <ControlsContainer>
+          <AddBookButton>Add Book</AddBookButton>
+          <CancelButton onClick={props.onCancel}>Cancel</CancelButton>
+        </ControlsContainer>
+      </form>
+    </div>
   );
 };
 
