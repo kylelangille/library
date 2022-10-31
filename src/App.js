@@ -3,6 +3,7 @@ import Header from "./components/UI/Header";
 import Footer from "./components/UI/Footer";
 import NewBook from "./components/NewBook/NewBook";
 import Books from "./components/Books/Books";
+import Wrapper from "./components/Helpers/Wrapper";
 
 const DUMMY_BOOKS = [
   {
@@ -40,12 +41,12 @@ function App() {
   }
 
   return (
-    <div>
+    <Wrapper>
       <Header />
       <NewBook onAddBook={addBookHandler} />
       {content}
       <Footer />
-    </div>
+    </Wrapper>
   );
 }
 

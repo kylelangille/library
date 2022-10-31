@@ -1,6 +1,28 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import ErrorModal from "../UI/ErrorModal";
+import Wrapper from "../Helpers/Wrapper";
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  border: 1px solid #ececec;
+  border-radius: 9px;
+  margin: 1rem auto 0 auto;
+
+  & label {
+    color: #ececec;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+  }
+
+  & input {
+    margin: 0 1rem 0 1rem;
+    height: 2rem;
+    outline: none;
+  }
+`;
 
 const InputWrapper = styled.div`
   display: flex;
@@ -24,7 +46,7 @@ const AddBookButton = styled.button`
 
   &:hover {
     color: #ececec;
-    background-color: #0984e3;
+    background: #0984e3;
   }
 `;
 
@@ -38,29 +60,8 @@ const CancelButton = styled.button`
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: #d63031;
+    background: #d63031;
     color: #ececec;
-  }
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  width: 25rem;
-  border: 1px solid #ececec;
-  border-radius: 9px;
-  margin: 1rem auto 0 auto;
-
-  & label {
-    color: #ececec;
-    margin-left: 1rem;
-    font-size: 1.2rem;
-  }
-
-  & input {
-    margin: 0 1rem 0 1rem;
-    height: 2rem;
-    outline: none;
   }
 `;
 
@@ -113,7 +114,7 @@ const NewBookForm = (props) => {
   };
 
   return (
-    <div>
+    <Wrapper>
       {error && (
         <ErrorModal
           title={error.title}
@@ -151,7 +152,7 @@ const NewBookForm = (props) => {
           <CancelButton onClick={props.onCancel}>Cancel</CancelButton>
         </ControlsContainer>
       </Form>
-    </div>
+    </Wrapper>
   );
 };
 
